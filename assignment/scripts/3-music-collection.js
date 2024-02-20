@@ -39,6 +39,21 @@ console.log(showCollection(myCollection, 'The Dark Side of the Moon','Pink Floyd
 console.log(showCollection(myCollection, 'Californication','Red Hot Chili Peppers',1999));
 
 
+function findByArtist (collection, artist){
+  let artistSearch = [];
+  for (let i = 0; i < collection.length; i++){
+    if (artistSearch === artist){
+        return artist;
+    }
+    else{
+      return 'Artist Not Found';
+    }
+  }
+}
+
+console.log(findByArtist(myCollection, 'Grateful Dead'));
+
+
 
 
 
