@@ -17,16 +17,16 @@ console.log(addToCollection(myCollection, 'American Beauty', 'Grateful Dead', 19
 console.log(addToCollection(myCollection, 'The Bends','Radiohead',1995));
 console.log(addToCollection(myCollection, 'Hot Fuss','The Killers', 2004));
 console.log(addToCollection(myCollection, 'Abbey Road','The Beatles',1969));
-console.log(addToCollection(myCollection, 'The Dark Side of the Moon','Pink Floyd',1973));
+console.log(addToCollection(myCollection, 'By The Way','Red Hot Chili Peppers',2002));
 console.log(addToCollection(myCollection, 'Californication','Red Hot Chili Peppers',1999));
 
 function showCollection(collection){
   for (let collectionItem of collection){
-    let collectionItem = {
-      title,
-      artist,
-      yearPublished,
-    }
+    // let collectionItem = {
+    //   title,
+    //   artist,
+    //   yearPublished,
+    // }
     console.log(collectionItem.title + " by " + collectionItem.artist + " published on " + collectionItem.yearPublished);
   }
 }
@@ -35,23 +35,27 @@ console.log(showCollection(myCollection, 'American Beauty', 'Grateful Dead', 197
 console.log(showCollection(myCollection, 'The Bends','Radiohead',1995));
 console.log(showCollection(myCollection, 'Hot Fuss','The Killers', 2004));
 console.log(showCollection(myCollection, 'Abbey Road','The Beatles',1969));
-console.log(showCollection(myCollection, 'The Dark Side of the Moon','Pink Floyd',1973));
+console.log(addToCollection(myCollection, 'By The Way','Red Hot Chili Peppers',2002));
 console.log(showCollection(myCollection, 'Californication','Red Hot Chili Peppers',1999));
 
 
 function findByArtist (collection, artist){
   let artistSearch = [];
-  for (let i = 0; i < collection.length; i++){
-    if (artistSearch === artist){
-        return artist;
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].artist === artist) {
+      artistSearch.push(collection[i]);
     }
-    else{
-      return 'Artist Not Found';
-    }
+  }
+  if (artistSearch.length > 0) {
+    return artistSearch;
+  } 
+  else {
+    return 'Artist Not Found';
   }
 }
 
-console.log(findByArtist(myCollection, 'Grateful Dead'));
+console.log(findByArtist(myCollection, 'Red Hot Chili Peppers'));
+console.log(findByArtist(myCollection, 'Adele'));
 
 
 
